@@ -1,8 +1,8 @@
 #!/bin/bash
-yum -y install bind bind-utils
+yum -y install bind bind-utils dos2unix
 systemctl enable named
-iptables -A INPUT -s 192.168.89.80/28 -p tcp -m state --state NEW --dport 53 -j ACCEPT
-iptables -A INPUT -s 192.168.89.80/28 -p udp -m state --state NEW --dport 53 -j ACCEPT
+firewall-cmd --permanent --add-port=53/udp
+firewall-cmd --reload
 mkdir /var/log/named
 chown named:named /var/log/named
 chmod 0700 /var/log/named
