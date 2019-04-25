@@ -2,6 +2,9 @@
 yum -y install bind bind-utils dos2unix
 systemctl enable named
 firewall-cmd --permanent --add-port=53/udp
+firewall-cmd --permanent --add-port=53/tcp
+firewall-cmd --permanent --add-port=953/udp
+firewall-cmd --permanent --add-port=953/tcp
 firewall-cmd --reload
 mkdir /var/log/named
 chown named:named /var/log/named
