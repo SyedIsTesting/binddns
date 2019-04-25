@@ -1,6 +1,6 @@
 #!/bin/bash
 serverip="$(hostname -I | cut -d" " -f 1)"
-hostname="hostname"
+hostname="$(cat /proc/sys/kernel/hostname)"
 zone="hassnat.co.uk"
 cat <<EOF > updatedns
 server 192.168.89.93
