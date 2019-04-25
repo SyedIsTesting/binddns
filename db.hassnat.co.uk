@@ -1,0 +1,11 @@
+$TTL 86400	; 1 day
+@			IN SOA	dnssrv.hassnat.co.uk. root.hassnat.co.uk. (
+				2018010700 ; Serial
+				3600       ; Refresh (1 hour)
+				3600       ; Retry (1 hour)
+				604800     ; Expire (1 week)
+				3600       ; Minimum (1 hour)
+)
+@		NS	dnssrv.hassnat.co.uk.
+@		A	192.168.89.93
+dnssrv		A	192.168.89.93
