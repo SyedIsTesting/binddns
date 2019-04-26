@@ -1,6 +1,7 @@
 #!/bin/bash
+wget https://github.com/SyedIsTesting/binddns/blob/master/rndc.key -P /etc
 keyvalue="$(az keyvault secret show --name "rndc-key" --vault-name "CustomerKV1" --query value)"
-sed -i "s|secret.*|${myString}secret $keyvalue;|g" rndc.key
+sed -i "s|secret.*|${myString}secret $keyvalue;|g" /etc/rndc.key
 serverip="$(hostname -I | cut -d" " -f 1)"
 hostname="$(cat /proc/sys/kernel/hostname)"
 zone="hassnat.co.uk"
