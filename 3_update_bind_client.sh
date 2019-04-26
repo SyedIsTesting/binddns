@@ -2,8 +2,9 @@
 serverip="$(hostname -I | cut -d" " -f 1)"
 hostname="$(cat /proc/sys/kernel/hostname)"
 zone="hassnat.co.uk"
+sed -i 's/nameserver.*/nameserver 10.22.113.137/g' /etc/resolv.conf
 cat <<EOF > updatedns
-server 192.168.89.93
+server 10.22.113.137
 zone $zone
 update add $hostname.$zone 86400 A $serverip
 send
