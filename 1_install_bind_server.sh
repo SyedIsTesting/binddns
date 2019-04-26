@@ -13,3 +13,4 @@ rndc-confgen -a -b 512 -r /dev/urandom
 chown root:named /etc/rndc.key
 chmod 0640 /etc/rndc.key
 mv /etc/named.conf /etc/namedoriginal
+wget https://github.com/SyedIsTesting/binddns/blob/master/named.conf -P /etc
