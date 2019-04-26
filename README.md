@@ -8,4 +8,5 @@ edit 2_finalise_bind_server and add the correct information thats previously bee
 # clientconfig
 copy /etc/rndc.key from bind server to client and place in the same location (this will need automation) <br>
 edit 3_update_bind_client and add the bind server ip and zone information (this will be automated in future release) <br>
+chmod +x 3_update_bind_client.sh <br>
 run 3_update_bind_client on the client servers to securely update dns.  This will need to be done once when provisioned <br>
